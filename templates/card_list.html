@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+    <h2>
+        All Cards
+    </h2>
+
+    {% for card in object_list %}
+        {% ifchanged %}
+        <h3>🗃 {{ card.box | ordinal }} Box</h3>
+    {% endifchanged %}
+        {% include 'card.html' %}
+    {% endfor %}
+
+{% endblock %}

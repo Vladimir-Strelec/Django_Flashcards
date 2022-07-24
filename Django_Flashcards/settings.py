@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'Django_Flashcards.cards',
+    "django.contrib.humanize",
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,7 @@ WSGI_APPLICATION = 'Django_Flashcards.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'new_file',
     }
 }
 
