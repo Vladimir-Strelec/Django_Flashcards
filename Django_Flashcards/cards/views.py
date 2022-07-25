@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 
-from Django_Flashcards.cards.forms import CreateCardForm
+from Django_Flashcards.cards.forms import CreateCardForm, UpdateCardForm
 from Django_Flashcards.cards.models import Card
 
 
@@ -12,6 +12,14 @@ class CardListView(ListView):
 
 
 class CardCreateView(CreateView):
-    template_name = 'card-form.html'
+    template_name = 'card-create.html'
     form_class = CreateCardForm
-    success_url = reverse_lazy(urls='card_create')
+    success_url = reverse_lazy('card create')
+
+
+class CardUpdateView(CardCreateView, UpdateView):
+    form_class = UpdateCardForm
+    queryset = Card.objects.all()
+    template_name = 'card-update.html'
+    success_url = reverse_lazy("card list")
+

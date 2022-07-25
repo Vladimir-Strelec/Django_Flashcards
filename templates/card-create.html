@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>✨ Create New Card</h2>
+    <form method="post" action="{% url 'card create' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">
+            <h2>SAVE CARD</h2>
+        </button>
+    </form>
+    <a href="{% url 'card list' %}">
+        <button type="submit">
+            <h2>Cancel</h2>
+        </button>
+{#        <input type="submit" value="Cancel">#}
+    </a>
+{% endblock %}

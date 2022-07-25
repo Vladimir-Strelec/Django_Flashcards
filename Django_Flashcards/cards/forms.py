@@ -7,3 +7,9 @@ class CreateCardForm(ModelForm):
     class Meta:
         model = Card
         fields = ['question', 'answer', 'box']
+
+
+class UpdateCardForm(ModelForm):
+    class Meta:
+        model = Card
+        fields = ['question', 'answer']

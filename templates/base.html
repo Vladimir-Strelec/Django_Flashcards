@@ -1,23 +1,33 @@
+{% load static %}
 <!-- cards/templates/cards/base.html -->
 
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href='{% static "/first_stile.css" %}'/>
 <head>
     <title>Flashcards</title>
 </head>
 
 <body>
-    <header>
-        <h1>Flashcards App</h1>
-        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<header class="header">
+    <div class="logo"><img src="https://api.freelogodesign.org/assets/thumb/logo/15101367_400.png?t=637873803620000000" height=30% width=20% alt=""></div>
+    <nav>
+        <ul class="nav">
+            <li><a href="{% url "card list" %}">You Cards</a></li>
+            <li><a href="{% url "card create" %}">Create Card</a></li>
+        </ul>
+    </nav>
 
-    </header>
-    <main>
-        {% block content %}
-            <h2>Welcome to your Flashcards app!</h2>
-        {% endblock content %}
-    </main>
+</header>
+<main class="main">
+
+    {% block content %}
+        <h2>Welcome to your Flashcards app!</h2>
+    {% endblock content %}
+</main>
+
+<footer class="footer"><h1>Footer</h1></footer>
 </body>
 
 </html>

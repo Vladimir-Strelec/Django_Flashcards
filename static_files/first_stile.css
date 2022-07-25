@@ -1,0 +1,103 @@
+
+
+
+
+    /* Custom CSS */
+
+
+
+
+    :root {
+        --accent: #white;
+        --accent-bg: white;
+        --bg:	#48d1cc	;
+        --text: #ffff;
+        --text-light: white;
+        --border: #585858;
+        --code: #d81b60;
+        --preformatted: #444;
+    }
+
+    article {
+        background-color: #585858;
+        width: 30%;
+        /*border: 5px white var(--border);*/
+        border-radius: 5px;
+        padding: 1em;
+        margin: 1em 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: white;
+    }
+
+    h2, h4 {
+        margin-top: 0;
+
+    }
+
+    hr {
+        background-image: url("https://img1.akspic.ru/crops/0/0/3/7/5/157300/157300-soty-stoyanie-lazurnyj-chernyy-liniya-2560x1440.jpg");
+        border-color: var(--accent);
+    }
+
+    button,
+    a[role="button"] {
+        color: #add8e6;
+        text-decoration: white;
+        font-max-size: xx-large;
+    }
+
+    input, select, textarea {
+        width: 50%;
+    }
+
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        background-image: url("https://look.com.ua/pic/201307/2560x1440/look.com.ua-73069.jpg");
+        background-repeat: no-repeat;
+
+    }
+
+    .header {
+        height: 10%;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        border-radius: 60px;
+    }
+    .logo {
+        padding-top: 0.5%;
+        height: 1%;
+    }
+    .nav li a {
+        display: block;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: 	#9370db;
+    }
+
+
+
+    .main {
+        flex: 1 0 auto;
+
+    }
+
+    .footer {
+    flex-shrink: 0;
+        background-image: url("");
+        background-repeat: no-repeat;
+    }
+
+
