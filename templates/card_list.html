@@ -7,9 +7,10 @@
 
     {% for card in object_list %}
         {% ifchanged %}
-        <h3>🗃 {{ card.box | ordinal }} Box</h3>
-    {% endifchanged %}
+        <h3>🧑‍🎓 {{ card.box | ordinal }} Box</h3>
+        {% endifchanged %}
         {% include 'card.html' %}
+
     {% endfor %}
 
 {% endblock %}

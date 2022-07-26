@@ -11,8 +11,20 @@ class CardListView(ListView):
     template_name = 'card_list.html'
 
 
+class BoxView(CardListView):
+    template_name = "box.html"
+
+    def get_queryset(self):
+        return Card.objects.filter(box=self.kwargs["pk"])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["box_number"] = self.kwargs["pk"]
+        return context
+
+
 class CardCreateView(CreateView):
-    template_name = 'card-create.html'
+    template_name = 'card-create-update.html'
     form_class = CreateCardForm
     success_url = reverse_lazy('card create')
 
@@ -20,6 +32,6 @@ class CardCreateView(CreateView):
 class CardUpdateView(CardCreateView, UpdateView):
     form_class = UpdateCardForm
     queryset = Card.objects.all()
-    template_name = 'card-update.html'
+    template_name = 'card-create-update.html'
     success_url = reverse_lazy("card list")
 
