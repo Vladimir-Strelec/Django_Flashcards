@@ -4,14 +4,15 @@
     {% if card %}
         <h2>✏️ Edit Card</h2>
     {% else %}
-        <h2>✨ Create New Card</h2>
+        <h2><img src="https://media.istockphoto.com/vectors/joker-playing-card-in-retro-style-vector-id1210302163?k=20&m=1210302163&s=612x612&w=0&h=Vbt_9gMusLYn26KsSRKVKE2F_Dp6qoKV2K63w9jyfU4=" alt="#" width=5% height=5%> Create New Card</h2>
     {% endif %}
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Save Card">
+        <article>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save Card">
+        </article>
+    <h4>To see all the cards you have created, click ALL CARDS</h4>
     </form>
-    <a href="{% url 'card list' %}">
-        Cancel
-    </a>
+
 {% endblock %}

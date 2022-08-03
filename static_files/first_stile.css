@@ -1,105 +1,160 @@
+/* Custom CSS */
+
+
+:root {
+    --accent: url("https://64.media.tumblr.com/fc6ad8b15a7a305455d7197902ff38fa/tumblr_ncvq44Li2Y1s90wi8o1_640.gifv");
+    /*--accent-bg: #48d1cc;*/
+    --bg: url("https://64.media.tumblr.com/fc6ad8b15a7a305455d7197902ff38fa/tumblr_ncvq44Li2Y1s90wi8o1_640.gifv");
+    --text: yellow;
+    /*--text-light: white;*/
+    --border: yellow;
+    /*--code: #d81b60;*/
+    /*--preformatted: #444;*/
+
+}
+
+.p {
+
+    color: yellowgreen;
+    font-size: x-large;
+}
+
+article {
+    min-height: 350px;
+    min-width: 450px;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    /*background-image: url("https://www.gamersdecide.com/sites/default/files/authors/u151218/enemywithin_0.jpg");*/
+    background-image: url("https://i.gifer.com/XXti.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em;
+}
+
+h2 {
+    text-align: center;
+    color: red;
+
+}
+
+h2, h4 {
+
+    text-decoration: none;
+}
+
+hr {
+
+    border-color: var(--accent);
+}
+
+button,
+a[role="button"] {
+    color: yellow;
+    text-decoration: none;
+    font-max-size: xx-large;
+    width: 20%;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, select, textarea {
+    padding-left: -10px;
+    width: 150px;
+    background-image: url("https://klike.net/uploads/posts/2022-05/1651736894_2.jpg");
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-size:contain;
+    /*background-position:center;*/
+}
+
+body {
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://images3.alphacoders.com/103/1039850.jpg");
+    background-attachment: fixed;
 
 
 
+}
 
-    /* Custom CSS */
+.header {
 
+    min-height: 13%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 60px;
+}
 
+.logo {
+    padding-top: 0.5%;
+    height: 1%;
+}
 
-
-    :root {
-        --accent: #white;
-        --accent-bg: white;
-        --bg:	#48d1cc	;
-        --text: #ffff;
-        --text-light: white;
-        --border: #585858;
-        --code: #d81b60;
-        --preformatted: #444;
-    }
-
-    article {
-        background-color: #585858;
-        width: 30%;
-        /*border: 5px white var(--border);*/
-        border-radius: 5px;
-        padding: 1em;
-        margin: 1em 0;
-    }
-
-    h2 {
-        text-align: center;
-        color: white;
-    }
-
-    h2, h4 {
-        margin-top: 0;
-
-    }
-
-    hr {
-        background-image: url("https://img1.akspic.ru/crops/0/0/3/7/5/157300/157300-soty-stoyanie-lazurnyj-chernyy-liniya-2560x1440.jpg");
-        border-color: var(--accent);
-    }
-
-    button,
-    a[role="button"] {
-        color: #add8e6;
-        text-decoration: white;
-        font-max-size: xx-large;
-    }
-
-    input, select, textarea {
-        width: 50%;
-    }
-
-    body, html {
-        height: 100%;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-
-        background-image: url("https://look.com.ua/pic/201307/2560x1440/look.com.ua-73069.jpg");
-        background-repeat: no-repeat;
-
-    }
-
-    .header {
-        height: 10%;
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-        background-color: black;
-        border-radius: 60px;
-    }
-    .logo {
-        padding-top: 0.5%;
-        height: 1%;
-    }
-    .nav li a {
-        display: block;
-        padding: 10px;
-        border-radius: 15px;
-        background-color: 	#9370db;
-    }
+.nav li a {
+    display: block;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: black;
+    color: black;
+}
 
 
+.main {
+    display: flex;
+    min-width: 20%;
+    max-width: 69%;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
 
-    .main {
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+}
 
-    }
+.main2 {
 
-    .footer {
-    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    }
+}
 
 
+.footer {
+    padding: 0;
+    display: flex;
+    flex: 0 0 auto;
+
+}
+
+.details {
+    display: flex;
+    max-width: 350px;
+    max-height: 450px;
+    margin: 15px;
+    background-image: url("https://klike.net/uploads/posts/2020-01/1579335957_4.jpg");
+    background-position: center;
+    color: yellow;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+
+}

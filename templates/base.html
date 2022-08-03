@@ -1,5 +1,6 @@
+{% load humanize %}
 {% load static %}
-<!-- cards/templates/cards/base.html -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,24 +11,38 @@
 </head>
 
 <body>
+
 <header class="header">
-    <div class="logo"><img src="https://api.freelogodesign.org/assets/thumb/logo/15101367_400.png?t=637873803620000000" height=30% width=20% alt=""></div>
+
+    <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGB0gDa6zYINO91-RFtTSDPKPrVEQm6KIPw&usqp=CAU"
+                           height=45% width=45% alt="#"></div>
+
+        <h4>
+        <a href="{% url 'card list' %}">🗂 All Cards</a>
+        {% for object in boxes_count %}
+            <a href="{% url 'header boxes' object.number %}">
+                🗃 {{ object.number | ordinal }} Box
+                <mark>{{ object.card_count }}</mark>
+            </a>
+        {% endfor %}
+        </h4>
     <nav>
         <ul class="nav">
-            <li><a href="{% url "card list" %}">🗂 All Cards</a></li>
             <li><a href="{% url "card create" %}">Create Card</a></li>
         </ul>
     </nav>
 
 </header>
-<main class="main">
 
-    {% block content %}
-        <h2>Welcome to your Flashcards app!</h2>
-    {% endblock content %}
+<main class="main">
+    <div class="main2">
+        {% block content %}
+            <h2>Welcome to your Flashcards app!</h2>
+        {% endblock content %}
+    </div>
 </main>
 
-<footer class="footer"><h1>Footer</h1></footer>
+<footer class="footer"><h4><p>The rules are simple. You need to create questions in your language and answers in another language. If you give the correct answers, then the questions move clockwise. If you make a mistake, the question will return to the beginning.</p></h4></footer>
 </body>
 
 </html>

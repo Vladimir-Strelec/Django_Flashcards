@@ -2,10 +2,14 @@
 {% load humanize %}
 
 {% block content %}
-    <h2>🗃 {{ box_number | ordinal }} Box</h2>
-    <mark>{{ object_list | length }}</mark> Card{{ object_list | pluralize }} left in box.
+
+    <h2>🗃{{ box_number | ordinal }} Box</h2>
+    <p class="p">{{ object_list | length }} Card{{ object_list | pluralize }} left in box.</p>
     <hr>
-    {% for card in object_list %}
-        {% include "card.html" %}
-    {% endfor %}
+    {% if check_card %}
+            {% include "card.html" with card=check_card %}
+    {% elif not check_card %}
+        <img src="http://test.ultralinx.co/wp-content/uploads/2020/03/1_batman-joker-animated-gif-4gif.gif" alt="#" width=40% height=40%>
+    {% endif %}
+
 {% endblock content %}

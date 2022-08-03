@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 {% load humanize %}
 {% block content %}
-    <h2>
-        All Cards
-    </h2>
 
-    {% for card in object_list %}
-        {% ifchanged %}
-        <h3>🧑‍🎓 {{ card.box | ordinal }} Box</h3>
-        {% endifchanged %}
-        {% include 'card.html' %}
+    <main class="main">
+        {% if not object_list %}
 
-    {% endfor %}
-
+            <h2>To start the game you need to create cards with questions</h2>
+            <img src="https://c.tenor.com/bX9oFYCrYywAAAAC/joker-rain.gif" alt="#" width=50% height=50%>
+        {% elif object_list %}
+            {% for card in object_list %}
+                {% ifchanged %}
+                    <h3> {{ card.box | ordinal }} Box</h3>
+                    <img src="https://c.tenor.com/lcuvD0zkFNMAAAAd/question-mark.gif" alt="#" width=20% height=20%>
+                {% endifchanged %}
+                {% include "card.html" %}
+            {% endfor %}
+        {% endif %}
+    </main>
 {% endblock %}
