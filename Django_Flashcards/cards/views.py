@@ -1,17 +1,21 @@
 import random
 
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from Django_Flashcards.cards.forms import CreateCardForm, UpdateCardForm, CardCheckForm, DeleteCardForm
-from Django_Flashcards.cards.models import Card, BOXES
+from Django_Flashcards.cards.models import Card
 from template_tags.cards_tags import boxes_as_links
+
+user_name = get_user_model()
 
 
 class CardListView(ListView):
     model = Card
-    queryset = Card.objects.all().order_by("box",)
+    queryset = Card.objects.all().order_by("box", )
     template_name = 'card_list.html'
 
     # def get_queryset(self):
@@ -20,8 +24,6 @@ class CardListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['boxes_count'] = boxes_as_links()
-        # context["box_number"] = self.kwargs["pk"]
-
         return context
 
 
@@ -52,11 +54,17 @@ class CardCreateView(CreateView):
     template_name = 'card-create-update.html'
     form_class = CreateCardForm
     success_url = reverse_lazy('card create')
+    queryset = User.objects.all()
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        form.cleaned_data['user'] = request.user
+        if form.is_valid():
+            form.save()
 
 
 class CardUpdateView(CardCreateView, UpdateView):
     form_class = UpdateCardForm
-    queryset = Card.objects.all()
     template_name = 'card-create-update.html'
     success_url = reverse_lazy("card list")
 

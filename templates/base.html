@@ -16,7 +16,7 @@
 
     <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGB0gDa6zYINO91-RFtTSDPKPrVEQm6KIPw&usqp=CAU"
                            height=45% width=45% alt="#"></div>
-
+        <h4>{{ request.user }}</h4>
         <h4>
         <a href="{% url 'card list' %}">🗂 All Cards</a>
         {% for object in boxes_count %}
