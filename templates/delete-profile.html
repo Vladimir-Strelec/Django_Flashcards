@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>Do you really want to do this?</h3>
+    <form method="post" action="{% url 'delete profile' object.pk %}" class="select2-container--classic">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" role="button">YES</button>
+        <a href="{% url 'profile' object.pk %}" role="button">CANCEL</a>
+    </form>
+{% endblock %}

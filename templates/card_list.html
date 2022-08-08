@@ -8,7 +8,7 @@
             <h2>To start the game you need to create cards with questions</h2>
             <img src="https://c.tenor.com/bX9oFYCrYywAAAAC/joker-rain.gif" alt="#" width=50% height=50%>
         {% elif object_list %}
-            {% for card in object_list %}
+            {% for card in current_card_user %}
                 {% ifchanged %}
                     <h3> {{ card.box | ordinal }} Box</h3>
                     <img src="https://c.tenor.com/lcuvD0zkFNMAAAAd/question-mark.gif" alt="#" width=20% height=20%>

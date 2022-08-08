@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'Django_Flashcards.cards',
+    'Django_Flashcards.accounts',
 
     "django.contrib.humanize",
 ]

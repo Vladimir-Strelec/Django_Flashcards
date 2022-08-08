@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-<link rel="stylesheet" href='{% static "/first_stile.css" %}'/>
+<link rel="stylesheet" href='{% static "/second_stile.css" %}'/>
 <head>
     <title>Flashcards</title>
 </head>
@@ -18,7 +18,7 @@
         <div>
             <a href="{% url 'profile' user.pk %}" class="logo"><img
                     src="https://i.gifer.com/X18r.gif"
-                    height=15% width=15% alt="#"></a>
+                    height=25% width=25% alt="#"></a>
             <img src="https://i.gifer.com/Ddjq.gif" height=5% width=5% alt="#">
         </div>
         <h5>{{ user }}</h5>
@@ -47,9 +47,9 @@
 
 <main class="main">
     <div class="main2">
-        {% block content %}
+        {% block another_content %}
             <h2>Welcome to your Flashcards app!</h2>
-        {% endblock content %}
+        {% endblock another_content %}
     </div>
 </main>
 

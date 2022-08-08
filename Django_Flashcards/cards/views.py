@@ -15,7 +15,7 @@ user_name = get_user_model()
 
 class CardListView(ListView):
     model = Card
-    queryset = Card.objects.all().order_by("box", )
+    queryset = Card.objects.all().order_by("box",)
     template_name = 'card_list.html'
 
     # def get_queryset(self):
@@ -24,6 +24,7 @@ class CardListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['boxes_count'] = boxes_as_links()
+        context['current_card_user'] = Card.objects.filter(user_id=self.request.user.id).order_by('box',)
         return context
 
 
@@ -56,11 +57,10 @@ class CardCreateView(CreateView):
     success_url = reverse_lazy('card create')
     queryset = User.objects.all()
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        form.cleaned_data['user'] = request.user
-        if form.is_valid():
-            form.save()
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.save()
+        return super().form_valid(form)
 
 
 class CardUpdateView(CardCreateView, UpdateView):
