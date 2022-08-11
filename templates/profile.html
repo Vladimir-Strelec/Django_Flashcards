@@ -2,8 +2,10 @@
 {% block another_content %}
     <div class="profile">
         <ul>
-            <h4>{{ user }}</h4>
-            <h4>{{ user.date_joined }}</h4>
+            <h4>Name - {{ user }}</h4>
+            <h4>Email - {{ user.email }}</h4>
+            <h4>Joined - {{ user.data_joined }}</h4>
+            <h4>Edit - {{ user.data_edit }}</h4>
         </ul>
     </div>
     <div class="nav">

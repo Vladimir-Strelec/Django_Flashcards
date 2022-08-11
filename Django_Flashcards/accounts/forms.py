@@ -1,13 +1,25 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 from django.forms import models
 
-User = get_user_model()
+from Django_Flashcards.accounts.models import CustomUser
+
+UserModel = get_user_model()
+
+
+class RegisterUserForm(UserCreationForm):
+
+    class Meta:
+        model = UserModel
+        fields = ('name', 'email')
+        # fields = '__all__'
+
 
 
 class EditProfileForm(models.ModelForm):
     class Meta:
-        model = User
-        fields = ('username', 'password')
+        model = UserModel
+        fields = ('name', 'email')
 
 
 class DeleteProfileForm(models.ModelForm):
@@ -18,5 +30,5 @@ class DeleteProfileForm(models.ModelForm):
         return self.instance
 
     class Meta:
-        model = User
-        fields = ('username',)
+        model = UserModel
+        fields = ()

@@ -1,9 +1,6 @@
 import os
 from pathlib import Path
 
-
-
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-mnop5fg28lz)6re-uk*a&q!vqy782vcd8n$yn5l1c_e_d$8w4&'
@@ -91,6 +88,8 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATICFILES_DIRS = (

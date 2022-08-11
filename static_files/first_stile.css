@@ -94,19 +94,23 @@ body {
 
 .header {
 
-    min-height: 13%;
+    max-height: 8%;
     width: 98%;
     display: flex;
-    flex: 1 1 auto;
-
-    align-items: center;
+    flex: 1 0 auto;
+    justify-content: space-between;
     background-color: black;
     border-radius: 60px;
 }
 
 .logo {
-    padding-top: 0;
-    height: 1%;
+    height: 150%;
+    width: 15%;
+    background-image: url("https://i.gifer.com/X18r.gif");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    margin-top: 8px;
+    border-radius: 5px;
 }
 
 .nav li a {
@@ -120,6 +124,7 @@ body {
 
 
 .main {
+    margin-left: 0.5%;
     display: flex;
     min-width: 20%;
     max-width: 69%;

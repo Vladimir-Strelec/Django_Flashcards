@@ -13,23 +13,19 @@
 <body>
 
 <header class="header">
-    <a href=""></a>
     {% if user.pk %}
-        <div>
-            <a href="{% url 'profile' user.pk %}" class="logo"><img
-                    src="https://i.gifer.com/X18r.gif"
-                    height=15% width=15% alt="#"></a>
-            <img src="https://i.gifer.com/Ddjq.gif" height=5% width=5% alt="#">
+        <div class="logo">
+            <a href="{% url 'profile' user.pk %}" class="logo">Profile</a>
+            <img src="https://i.gifer.com/Ddjq.gif" height=13% width=13% alt="#">
         </div>
-        <h5>{{ user }}</h5>
+        <h5>BATS - {{ user }}</h5>
     {% elif not user.pk %}
-        <img src="https://klike.net/uploads/posts/2019-03/1551426635_1.jpg"
-             height=10% width=10% alt="#">
+        <div></div>
     {% endif %}
     <h4>
         <a href="{% url 'card list' %}">🗂 All Cards</a>
         {% for object in boxes_count %}
-            <a href="{% url 'header boxes' object.number %}">
+            <a href="{% url 'header boxes' object.number %}" role="button">
                 🗃 {{ object.number | ordinal }} Box
                 <mark>{{ object.card_count }}</mark>
             </a>
@@ -40,6 +36,9 @@
             <li><a href="{% url "card create" %}">Create Card</a></li>
             <li><a href="{% url "register" %}">Register</a></li>
             <li><a href="{% url "login" %}">Login</a></li>
+            {% if user.pk %}
+                <li><a href="{% url "logout" user.pk %}">Exit</a></li>
+            {% endif %}
         </ul>
     </nav>
 

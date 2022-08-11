@@ -5,7 +5,7 @@ from django.db import models
 
 NUM_BOXES = 5
 BOXES = range(1, NUM_BOXES + 1)
-user_name = get_user_model()
+UserModel = get_user_model()
 
 
 class Card(models.Model):
@@ -18,7 +18,7 @@ class Card(models.Model):
         default=BOXES[0],
     )
     date_created = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(user_name, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(UserModel, on_delete=models.CASCADE, blank=True, null=True)
 
     def move(self, solved):
         new_box = self.box + 1 if solved else BOXES[0]
