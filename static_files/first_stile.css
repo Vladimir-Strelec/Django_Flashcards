@@ -113,7 +113,7 @@ body {
     border-radius: 5px;
 }
 
-.nav li a {
+.nav ul a {
     text-decoration: none;
     display: block;
     padding: 10px;

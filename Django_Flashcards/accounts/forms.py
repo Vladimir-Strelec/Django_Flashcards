@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import forms
 from django.forms import models
 
 from Django_Flashcards.accounts.models import CustomUser
@@ -7,7 +7,7 @@ from Django_Flashcards.accounts.models import CustomUser
 UserModel = get_user_model()
 
 
-class RegisterUserForm(UserCreationForm):
+class RegisterUserForm(forms.UserCreationForm):
 
     class Meta:
         model = UserModel
