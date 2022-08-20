@@ -1,6 +1,4 @@
-from django.contrib.auth import get_user_model
-from django.contrib.auth import views
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model, views, mixins
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -31,24 +29,26 @@ class UserLogout(views.LogoutView):
     template_name = 'login.html'
 
 
-class ProfileView(LoginRequiredMixin, generic.DetailView):
+
+class ProfileView(mixins.LoginRequiredMixin, generic.DetailView):
     queryset = User.objects.all()
     template_name = 'profile.html'
 
 
-class EditProfile(LoginRequiredMixin, generic.UpdateView):
-    queryset = User.objects.all()
+class EditProfile(mixins.LoginRequiredMixin, generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'edit-profile.html'
-    success_url = reverse_lazy('profile')
+    success_url = reverse_lazy('card list')
+    queryset = User.objects.all()
 
 
-class ChangePassword(LoginRequiredMixin, views.PasswordChangeView):
+
+class ChangePassword(mixins.LoginRequiredMixin, views.PasswordChangeView):
     template_name = 'change-password.html'
     success_url = reverse_lazy('login')
 
 
-class DeleteProfile(LoginRequiredMixin, generic.UpdateView):
+class DeleteProfile(mixins.LoginRequiredMixin, generic.UpdateView):
     queryset = User.objects.all()
     form_class = DeleteProfileForm
     success_url = reverse_lazy('card list')

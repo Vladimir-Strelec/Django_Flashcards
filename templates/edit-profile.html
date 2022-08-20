@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form method="POST" action="{% url 'profile' object.pk %}">
+    <form method="POST">
         {% csrf_token %}
         {{ form }}
         <div>
             <a href="{% url 'change password' object.pk %}" role="button">Change Password</a>
         </div>
         <div>
-            <input type="submit" value="SAVE">
+            <button type="submit">Save</button>
         </div>
     </form>
 {% endblock %}

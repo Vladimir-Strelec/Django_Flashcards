@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <form method="post" action="{% url 'delete profile' object.pk %}" class="select2-container--classic">
+    <form method="post" class="select2-container--classic">
         <h3>Do you really want to do this?</h3>
         {% csrf_token %}
         {{ form }}

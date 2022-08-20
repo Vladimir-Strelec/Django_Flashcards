@@ -18,3 +18,4 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'name'
     objects = CardUserManager()
+    a = 5
