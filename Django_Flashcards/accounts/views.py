@@ -22,7 +22,6 @@ class UserLoginView(views.LoginView):
     def get_success_url(self):
         if self.success_url:
             return self.success_url
-        return super().get_success_url()
 
 
 class UserLogout(views.LogoutView):
@@ -57,5 +56,5 @@ class DeleteProfile(mixins.LoginRequiredMixin, generic.UpdateView):
     def get_success_url(self):
         if self.success_url:
             return self.success_url
-        return super().get_success_url()
+
 
