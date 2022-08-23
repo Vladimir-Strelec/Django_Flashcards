@@ -1,10 +1,5 @@
-import json
-
-from django.test.client import Client
 from django.test import TestCase
-from django.urls import reverse
 
-from Django_Flashcards.wsgi import *
 from Django_Flashcards.accounts.forms import RegisterUserForm, EditProfileForm, DeleteProfileForm
 from Django_Flashcards.accounts.models import CustomUser
 
@@ -18,6 +13,7 @@ class PermissionAPITestcase(TestCase):
             'password2': 'v1',
         }
         self.user = CustomUser.objects.create(name='Vova', email='vova@gmail.com', password='v1')
+
 
     def test_create_custom_user_form_is_valid(self):
         form = RegisterUserForm(data=self.data)
@@ -43,4 +39,11 @@ class PermissionAPITestcase(TestCase):
         form = DeleteProfileForm(data=self.user)
         self.assertTrue(form.is_valid())
 
+    def test_delete_profile_method_save(self):
+        user2 = CustomUser.objects.create(name='Test', email='test1@gmail.com', password='v1')
+        self.assertEqual(CustomUser.objects.all().count(), 2)
+        obj = DeleteProfileForm(self)
+        obj.instance = user2
+        obj.save()
+        self.assertEqual(CustomUser.objects.all().count(), 1)
 

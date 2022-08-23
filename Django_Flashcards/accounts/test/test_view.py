@@ -36,12 +36,12 @@ class TestProfileView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'login.html')
 
-    def test_login_success(self):
+    def test_login_method_success(self):
         current_obj = UserLoginView()
         result = current_obj.get_success_url()
         self.assertEqual(result, '/')
 
-    def test_delete_profile_success(self):
+    def test_delete_profile_method_success(self):
         current_obj = DeleteProfile()
         result = current_obj.get_success_url()
         self.assertEqual(result, '/')
