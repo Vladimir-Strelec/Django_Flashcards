@@ -20,11 +20,6 @@ class UpdateCardForm(ModelForm):
 
 
 class DeleteCardForm(ModelForm):
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(self, *args, **kwargs)
-    #     for _, f in self.fields.items():
-    #         f.widget.attrs['disabled'] = 'disabled'
-    #         f.required = False
 
     def save(self, commit=True):
         self.instance.delete()
