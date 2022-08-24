@@ -42,7 +42,7 @@ class BoxView(CardListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['boxes_count'] = boxes_as_links(self.request.user)
-        context["box_number"] = self.kwargs["pk"]
+        context['box_number'] = self.kwargs['pk']
         if self.object_list:
             context["check_card"] = random.choice(self.object_list)
         return context
@@ -85,7 +85,4 @@ class CardDeleteView(DeleteView):
     template_name = 'card-delete-update.html'
     success_url = reverse_lazy("card list")
 
-    # def get(self, request, *args, **kwargs):
-    #     obj = Card.objects.get(id=kwargs['pk'])
-    #     obj.delete()
-    #     return obj
+
