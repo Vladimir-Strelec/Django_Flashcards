@@ -21,11 +21,11 @@ class Card(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE, blank=True, null=True)
 
     def move(self, solved):
-        new_box = self.box + 1 if solved else BOXES[0]
+        new_box = self.box + 1 if solved and self.box + 1 <= 5 else BOXES[0]
 
-        if new_box in BOXES:
-            self.box = new_box
-            self.save()
+
+        self.box = new_box
+        self.save()
 
         return self
 

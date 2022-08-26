@@ -52,7 +52,11 @@ class BoxView(CardListView):
         if form.is_valid():
             card = get_object_or_404(Card, id=form.cleaned_data['card_id'])
             card.move(form.cleaned_data['solved'])
-        return redirect(request.META.get("HTTP_REFERER"))
+        # return redirect(request.META.get("HTTP_REFERER"))
+        if int(request.path[-2]) < 5:
+            return redirect(request.path)
+        path = str(request.path).replace('5', '1')
+        return redirect(path)
 
 
 class CardCreateView(CreateView):
