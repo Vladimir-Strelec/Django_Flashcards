@@ -44,11 +44,13 @@ h2 {
 }
 
 h2, h4 {
+    padding: 0 10px 0 10px;
 
     text-decoration: none;
 }
 
 .hr {
+
     text-decoration: none;
     border-color: var(--accent);
 }
@@ -82,11 +84,14 @@ body, html {
 }
 
 body {
-    min-width: 600px;
+    min-width: 490px;
     display: flex;
     flex-direction: column;
-    background-image: url("https://images3.alphacoders.com/103/1039850.jpg");
-    background-attachment: fixed;
+    background: url("https://images3.alphacoders.com/103/1039850.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
 
 
@@ -94,13 +99,14 @@ body {
 
 .header {
 
-    max-height: 8%;
-    width: 98%;
+    max-height: 5cm;
+    width: 100%;
     display: flex;
-    flex: 1 0 auto;
+    flex-grow: initial;
     justify-content: space-between;
     background-color: black;
-    border-radius: 60px;
+    border-radius: 30px;
+
 }
 
 .logo {
@@ -155,9 +161,12 @@ body {
     display: flex;
     max-width: 350px;
     max-height: 450px;
-    margin: 15px;
-    background-image: url("https://klike.net/uploads/posts/2020-01/1579335957_4.jpg");
-    background-position: center;
+    margin: 10px 0 10px 0;
+    background: url("https://klike.net/uploads/posts/2020-01/1579335957_4.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: yellow;
 }
 

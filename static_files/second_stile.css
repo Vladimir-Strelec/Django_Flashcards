@@ -69,7 +69,11 @@ a {
 input, select, textarea {
     padding-left: -10px;
     width: 150px;
-    background-image: url("https://klike.net/uploads/posts/2022-05/1651736894_2.jpg");
+    background: url("https://klike.net/uploads/posts/2022-05/1651736894_2.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body, html {
@@ -83,15 +87,14 @@ body, html {
 }
 
 body {
-    min-width: 600px;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
-    background-image: url("https://i.gifer.com/X18r.gif");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-
-
+    background: url("https://i.gifer.com/X18r.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
 }
 
@@ -104,6 +107,8 @@ body {
     justify-content: space-between;
     background-color: black;
     border-radius: 60px;
+    padding: 0 10px 0 10px;
+    margin: 10px 0 10px 0;
 }
 
 .logo {
@@ -158,8 +163,11 @@ body {
     max-width: 350px;
     max-height: 450px;
     margin: 15px;
-    background-image: url("https://klike.net/uploads/posts/2020-01/1579335957_4.jpg");
-    background-position: center;
+    background: url("https://klike.net/uploads/posts/2020-01/1579335957_4.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: yellow;
 }
 
