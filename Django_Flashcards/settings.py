@@ -8,7 +8,7 @@ SECRET_KEY = ('SECRET_KEY', '')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT')
+APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT',)
 
 ALLOWED_HOSTS = ["*"]
 # All
@@ -36,6 +36,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'Django_Flashcards.urls'
@@ -61,6 +64,7 @@ WSGI_APPLICATION = 'Django_Flashcards.wsgi.application'
 
 if APP_ENVIRONMENT == 'Production':
     from prod_settings import DB as DATABASES
+    DATABASES.items()
 
 else:
     DATABASES = {
@@ -97,18 +101,22 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = BASE_DIR / "static_files"
 STATIC_URL = '/static/'
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config()
+#
+# DATABASES['default'].update(db_from_env)
 
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR_2, 'static_files', ),
+STATICFILES_DIRS2 = (
+    os.path.join(BASE_DIR_2, 'static_files',),
 )
 
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
