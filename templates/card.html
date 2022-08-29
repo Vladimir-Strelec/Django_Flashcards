@@ -1,17 +1,11 @@
+<div>
+    <article>
 
-<article>
-<h4>{{ card.question }}</h4>
+        <h4 class="details">{{ card.question }}</h4>
         {% if not check_card %}
-
-            <p class="p">{{ card.answer }}</p>
+            <p class="details"><div class="details">{{ card.answer }}</div></p>
             <hr>
 
-            <a href="{% url 'card update' card.id %}" role="button">
-                ✏️Edit Card
-            </a>
-            <a href="{% url 'card delete' card.id %}" role="button">
-                Delete Card
-            </a>
         {% else %}
 
             <details class="details">
@@ -19,10 +13,16 @@
                 <p class="p">{{ card.answer }}</p>
             </details>
 
-
-
-
             {% include "card_check_form.html" with solved=True %}
             {% include "card_check_form.html" with solved=False %}
         {% endif %}
-</article>
+    </article>
+    <h4 class="nav">
+        <a href="{% url 'card update' card.id %}" role="button">
+            ✏️Edit Card
+        </a>
+        <a href="{% url 'card delete' card.id %}" role="button">
+            Delete Card
+        </a>
+    </h4>
+</div>

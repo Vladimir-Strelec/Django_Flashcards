@@ -23,28 +23,40 @@
         <div></div>
     {% endif %}
     <h4>
-        <a href="{% url 'card list' %}">🗂 All Cards</a>
+
+        {% if user.pk %}
+            <a href="{% url 'card list' %}">🗂 All Cards</a>
+        {% endif %}
+        <div class="div">
         {% for object in boxes_count %}
-            <a href="{% url 'header boxes' object.number %}" role="button">
-                🗃 {{ object.number | ordinal }} Box
-                <mark>{{ object.card_count }}</mark>
-            </a>
+            <div>
+                <a href="{% url 'header boxes' object.number %}" role="button">
+                    🗃 {{ object.number | ordinal }} Box
+                    <mark>{{ object.card_count }}</mark>
+                </a>
+            </div>
         {% endfor %}
+        </div>
     </h4>
-    <nav>
-        <ul class="nav">
-            <li><a href="{% url "card create" %}">Create Card</a></li>
-            <li><a href="{% url "register" %}">Register</a></li>
-            <li><a href="{% url "login" %}">Login</a></li>
+
+    <nav class="nav">
+        <p>
+            <a href="{% url "register" %}">Register</a>
+            <a href="{% url "login" %}">Login</a>
             {% if user.pk %}
-                <li><a href="{% url "logout" user.pk %}">Exit</a></li>
+                <a href="{% url "logout" user.pk %}">Exit</a>
             {% endif %}
-        </ul>
+        </p>
     </nav>
 
 </header>
 
 <main class="main">
+    {% if user.pk %}
+        <nav class="nav">
+            <a href="{% url "card create" %}">Create Card</a>
+        </nav>
+    {% endif %}
     <div class="main2">
         {% block content %}
             <h2>Welcome to your Flashcards app!</h2>

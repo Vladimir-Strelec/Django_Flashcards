@@ -10,7 +10,7 @@ UserModel = get_user_model()
 
 class Card(models.Model):
     MIN_LENGTH = 2
-    MAX_LENGTH = 100
+    MAX_LENGTH = 50
     question = models.CharField(max_length=MAX_LENGTH, validators=(MinLengthValidator(MIN_LENGTH),))
     answer = models.CharField(max_length=MAX_LENGTH, validators=(MinLengthValidator(MIN_LENGTH),))
     box = models.IntegerField(

@@ -15,6 +15,8 @@
 
 .p {
 
+    display: inline-flex;
+    flex: 0 1 auto;
     color: yellowgreen;
     font-size: x-large;
 }
@@ -84,9 +86,10 @@ body, html {
 }
 
 body {
-    min-width: 490px;
+    min-width: 450px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background: url("https://images3.alphacoders.com/103/1039850.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -120,8 +123,10 @@ body {
 }
 
 .nav ul a {
+    display: flex;
+
+
     text-decoration: none;
-    display: block;
     padding: 10px;
     border-radius: 15px;
     background-color: black;
@@ -171,8 +176,8 @@ body {
 }
 
 .div {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+
 
 }
 .profile {
