@@ -3,7 +3,7 @@
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form }}
-        <div>
+        <div class="nav">
             <button type="submit" role="button">Sign in</button>
         </div>
 

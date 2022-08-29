@@ -142,11 +142,12 @@ body {
 }
 
 .main2 {
-
+    color: red;
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 20px;
 
 }
 

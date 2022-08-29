@@ -78,6 +78,7 @@ class CardCreateView(CreateView):
 
 class CardUpdateView(CardCreateView, UpdateView):
     form_class = UpdateCardForm
+    queryset = Card.objects.all()
     template_name = 'card-create-update.html'
     success_url = reverse_lazy("card list")
 

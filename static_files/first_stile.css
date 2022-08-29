@@ -57,12 +57,12 @@ h2, h4 {
     border-color: var(--accent);
 }
 
-button,
-a[role="button"] {
+.button, a[role="button"] {
     color: yellow;
     text-decoration: none;
     font-max-size: xx-large;
     width: 20%;
+    border-radius: 20px;
 }
 
 a {
@@ -70,9 +70,10 @@ a {
 }
 
 input, select, textarea {
-    padding-left: -10px;
-    width: 150px;
+    padding-left: 10px;
+    width: 350px;
     background-image: url("https://klike.net/uploads/posts/2022-05/1651736894_2.jpg");
+    border-radius: 20px;
 }
 
 body, html {
@@ -124,6 +125,7 @@ body {
 
 .nav ul a {
     display: flex;
+    border: yellow;
 
 
     text-decoration: none;
@@ -146,7 +148,6 @@ body {
 }
 
 .main2 {
-
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;

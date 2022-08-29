@@ -40,13 +40,12 @@
     </h4>
 
     <nav class="nav">
-        <p>
+        {% if not user.pk %}
             <a href="{% url "register" %}">Register</a>
             <a href="{% url "login" %}">Login</a>
-            {% if user.pk %}
+            {% elif user.pk %}
                 <a href="{% url "logout" user.pk %}">Exit</a>
             {% endif %}
-        </p>
     </nav>
 
 </header>
