@@ -7,11 +7,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = ('SECRET_KEY', '')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
+print(DEBUG)
 
 APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT',)
 
-ALLOWED_HOSTS = ["*"]
-# All
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+print(ALLOWED_HOSTS)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -114,10 +115,6 @@ BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = BASE_DIR / "static_files"
 STATIC_URL = '/static/'
 
-# db_from_env = dj_database_url.config()
-#
-# DATABASES['default'].update(db_from_env)
-
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -126,5 +123,4 @@ STATICFILES_DIRS2 = (
     os.path.join(BASE_DIR_2, 'static_files',),
 )
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
