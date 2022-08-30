@@ -62,7 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Django_Flashcards.wsgi.application'
-print(APP_ENVIRONMENT)
+
 if APP_ENVIRONMENT == 'Production':
     DATABASES = {
         'default': {
@@ -115,6 +115,10 @@ BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = BASE_DIR / "static_files"
 STATIC_URL = '/static/'
 
+# db_from_env = dj_database_url.config()
+#
+# DATABASES['default'].update(db_from_env)
+
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -123,4 +127,5 @@ STATICFILES_DIRS2 = (
     os.path.join(BASE_DIR_2, 'static_files',),
 )
 
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
