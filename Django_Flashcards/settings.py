@@ -83,7 +83,7 @@ else:
         }
     }
 
-
+print(DATABASES)
 if APP_ENVIRONMENT == 'Production':
     AUTH_PASSWORD_VALIDATORS = [
         {
