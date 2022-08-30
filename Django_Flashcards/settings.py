@@ -62,7 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Django_Flashcards.wsgi.application'
-
+print(APP_ENVIRONMENT)
 if APP_ENVIRONMENT == 'Production':
     DATABASES = {
         'default': {
