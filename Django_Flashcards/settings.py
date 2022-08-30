@@ -9,9 +9,9 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 print(DEBUG)
 
-APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT',)
+APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT', 'Development')
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(' ')
 print(ALLOWED_HOSTS)
 
 INSTALLED_APPS = [
@@ -68,7 +68,7 @@ if APP_ENVIRONMENT == 'Production':
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'HOST': os.getenv('DB_HOST'),
-            'PORT': os.getenv('DB_PORT', '5432'),
+            'PORT': os.getenv('DB_PORT'),
             'NAME': os.getenv('DB_NAME'),
             'USER': os.getenv('DB_USER'),
             'PASSWORD': os.getenv('DB_PASSWORD'),
