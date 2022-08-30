@@ -63,8 +63,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Django_Flashcards.wsgi.application'
 
 if APP_ENVIRONMENT == 'Production':
-    from prod_settings import DB as DATABASES
-    DATABASES.items()
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT', '5432'),
+            'NAME': os.getenv('DB_NAME'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+        }
+    }
 
 else:
     DATABASES = {
