@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 # SECRET_KEY = 'RANDOM_KEY_@_1989_!R$DS":B>'
 print(SECRET_KEY)
 
-DEBUG = os.getenv('DEBUG', 'False') == 'False'
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 print(DEBUG)
 
 APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT', 'Development')
