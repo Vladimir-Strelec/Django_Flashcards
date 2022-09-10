@@ -4,14 +4,18 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', '')
+# SECRET_KEY = os.getenv('SECRET_KEY', '')
+SECRET_KEY = 'RANDOM_KEY_@_1989_!R$DS":B>'
+print(SECRET_KEY)
 
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'False'
 print(DEBUG)
 
 APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT', 'Development')
+print(APP_ENVIRONMENT)
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(' ')
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(' ')
+ALLOWED_HOSTS = ["*"]
 print(ALLOWED_HOSTS)
 
 INSTALLED_APPS = [
@@ -67,11 +71,11 @@ if APP_ENVIRONMENT == 'Production':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'HOST': os.getenv('DB_HOST'),
+            'HOST': os.getenv('DB_HOST', 'db'),
             'PORT': os.getenv('DB_PORT', '5432'),
-            'NAME': os.getenv('DB_NAME'),
-            'USER': os.getenv('DB_USER'),
-            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'NAME': os.getenv('DB_NAME', 'postgres'),
+            'USER': os.getenv('DB_USER', 'postgres'),
+            'PASSWORD': os.getenv('DB_PASSWORD', '12345'),
         }
     }
 
@@ -81,6 +85,14 @@ else:
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'new_file',
         }
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.postgresql',
+        #     'HOST': "db",
+        #     'PORT': '5432',
+        #     'NAME': 'postgres',
+        #     'USER': 'postgres',
+        #     'PASSWORD': '12345',
+        # }
     }
 
 print(DATABASES)

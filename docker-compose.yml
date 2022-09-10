@@ -1,0 +1,67 @@
+#version: '2.7'
+#
+#services:
+#  db:
+#    image: postgres
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+##      - on the left is the address of the base on the host machine (computer) on the right in the container
+#    restart: always
+#
+#  db_web:
+#    build: .
+##    buildid docker file
+#    command: python /usr/src/django_flashcards/manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - .:/usr/src/django_flashcards
+#    ports:
+#      - 8000:8000
+#    depends_on:
+#      - db
+#volumes:
+#  postgres_data:
+#
+##add image postgresql and start docker compose "docker-compose build"
+##run container postgres "docker-compose up"
+##alternative docker-compose up --build
+
+
+version: "3.7"
+
+services:
+  db:
+    image: postgres:12
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: postgres
+
+  django:
+    container_name: db_django
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: bash -c "python /usr/src/dm_rest/manage.py migrate --noinput && python /usr/src/dm_rest/manage.py runserver 0.0.0.0:8000"
+
+    volumes:
+      - .:/usr/src/dm_rest
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+#  db_web:
+#      build: .
+#  #    buildid docker file
+#      command: python /usr/src/django_flashcards/manage.py runserver 0.0.0.0:8000
+#      volumes:
+#        - .:/usr/src/django_flashcards
+#      ports:
+#        - 8001:8000
+#      depends_on:
+#        - db
+volumes:
+  pg_data:
+# pg_ctl -D /var/lib/postgresql/data -l logfile start
