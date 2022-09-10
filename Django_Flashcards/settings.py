@@ -4,8 +4,8 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECRET_KEY = os.getenv('SECRET_KEY', '')
-SECRET_KEY = 'RANDOM_KEY_@_1989_!R$DS":B>'
+SECRET_KEY = os.getenv('SECRET_KEY', '')
+# SECRET_KEY = 'RANDOM_KEY_@_1989_!R$DS":B>'
 print(SECRET_KEY)
 
 DEBUG = os.getenv('DEBUG', 'False') == 'False'
