@@ -5,18 +5,13 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', '')
-# SECRET_KEY = '0De01bIMAhuRTbLnyeIxFIVhH0lxpxVnZqCwi79wkAMhIP8cl3e92zqhxaPiZkAN'
-print(SECRET_KEY)
 
 DEBUG = os.getenv('DEBUG', 'False') == 'False'
-print(DEBUG)
 
 APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT', 'Development')
-print(APP_ENVIRONMENT)
 
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(' ')
-ALLOWED_HOSTS = ['*']
-print(ALLOWED_HOSTS)
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(' ')
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -89,7 +84,7 @@ else:
 
     }
 
-print(DATABASES)
+
 if APP_ENVIRONMENT == 'Production':
     AUTH_PASSWORD_VALIDATORS = [
         {
@@ -121,10 +116,6 @@ BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = BASE_DIR / "static_files"
 STATIC_URL = '/static/'
 
-# db_from_env = dj_database_url.config()
-#
-# DATABASES['default'].update(db_from_env)
-
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -133,5 +124,5 @@ STATICFILES_DIRS2 = (
     os.path.join(BASE_DIR_2, 'static_files',),
 )
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

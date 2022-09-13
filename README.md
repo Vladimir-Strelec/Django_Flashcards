@@ -1,1 +1,1 @@
-# Django_Flashcards
+# Django_Flashcards :nerd_face:
