@@ -82,18 +82,11 @@ if APP_ENVIRONMENT == 'Production':
 
 else:
     DATABASES = {
-        # 'default': {
-        #     'ENGINE': 'django.db.backends.sqlite3',
-        #     'NAME': BASE_DIR / 'new_file',
-        # }
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'HOST': 'ec2-3-224-184-9.compute-1.amazonaws.com',
-            'PORT': '5432',
-            'NAME': 'dbb02pjruujbas',
-            'USER': 'zakxbzcmzapjse',
-            'PASSWORD': '55dd80984db2daa107ed518e9a45d8372686a7336b9d28d056c479a9f9f7240b',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'new_file',
         }
+
     }
 
 print(DATABASES)
