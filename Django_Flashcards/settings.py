@@ -5,17 +5,17 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', '')
-# SECRET_KEY = 'RANDOM_KEY_@_1989_!R$DS":B>'
+# SECRET_KEY = '0De01bIMAhuRTbLnyeIxFIVhH0lxpxVnZqCwi79wkAMhIP8cl3e92zqhxaPiZkAN'
 print(SECRET_KEY)
 
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'False'
 print(DEBUG)
 
 APP_ENVIRONMENT = os.getenv('APP_ENVIRONMENT', 'Development')
 print(APP_ENVIRONMENT)
 
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(' ')
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 print(ALLOWED_HOSTS)
 
 INSTALLED_APPS = [
@@ -68,31 +68,32 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Django_Flashcards.wsgi.application'
 
 if APP_ENVIRONMENT == 'Production':
+
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'HOST': os.getenv('DB_HOST', 'db'),
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': os.getenv('DB_HOST'),
             'PORT': os.getenv('DB_PORT', '5432'),
-            'NAME': os.getenv('DB_NAME', 'postgres'),
-            'USER': os.getenv('DB_USER', 'postgres'),
-            'PASSWORD': os.getenv('DB_PASSWORD', '12345'),
+            'NAME': os.getenv('DB_NAME'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
         }
     }
 
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'new_file',
-        }
         # 'default': {
-        #     'ENGINE': 'django.db.backends.postgresql',
-        #     'HOST': "db",
-        #     'PORT': '5432',
-        #     'NAME': 'postgres',
-        #     'USER': 'postgres',
-        #     'PASSWORD': '12345',
+        #     'ENGINE': 'django.db.backends.sqlite3',
+        #     'NAME': BASE_DIR / 'new_file',
         # }
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': 'ec2-3-224-184-9.compute-1.amazonaws.com',
+            'PORT': '5432',
+            'NAME': 'dbb02pjruujbas',
+            'USER': 'zakxbzcmzapjse',
+            'PASSWORD': '55dd80984db2daa107ed518e9a45d8372686a7336b9d28d056c479a9f9f7240b',
+        }
     }
 
 print(DATABASES)

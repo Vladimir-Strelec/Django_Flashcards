@@ -31,12 +31,16 @@ version: "3.7"
 services:
   db:
     image: postgres:12
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q"]
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12345
-      POSTGRES_DB: postgres
+    ports:
+      - 8000:8000
 
   django:
     container_name: db_django
@@ -48,7 +52,7 @@ services:
     volumes:
       - .:/usr/src/dm_rest
     ports:
-      - 8000:8000
+      - 8001:8000
     depends_on:
       - db
 
