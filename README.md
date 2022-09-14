@@ -1,7 +1,8 @@
 ![Header](https://thumbs.gfycat.com/AromaticMemorableAnemonecrab-max-1mb.gif)
 
 # Django_Flashcards:nerd_face:
-##Languages and tools
+## *Languages and tools*
+
 ![](https://img.shields.io/static/v1?label=&message=PYTHON&color=yellow&style=for-the-badge&logo=python&)
 ![](https://img.shields.io/static/v1?label=&message=DJANGO&color=336600&style=for-the-badge&logo=Django&)
 ![](https://img.shields.io/static/v1?label=&message=PosgreSQL&color=4dc3ff&style=for-the-badge&logo=Postgresql&logoColor=3399ff)
