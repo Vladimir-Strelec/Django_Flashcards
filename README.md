@@ -1,3 +1,3 @@
-![Header](http://25.media.tumblr.com/tumblr_m1oxnf9BYb1qm69mso1_1280.gif)
+![Header](https://thumbs.gfycat.com/AromaticMemorableAnemonecrab-max-1mb.gif)
 
 # Django_Flashcards:nerd_face:
