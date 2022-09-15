@@ -11,3 +11,41 @@
 ![](https://img.shields.io/static/v1?label=&message=SQLITE&color=black&style=for-the-badge&logo=SQLITE&logoColor=red)
 ![](https://img.shields.io/static/v1?label=&message=Docker&color=black&style=for-the-badge&logo=Docker)
 
+>APP INFO
+> >This app is designed for learning foreign languages in a playful way. Its logic is simple, you need to create a card in one of the 5 boxes. This card must have a question and an answer. You can create as many cards as you want, depending on the difficulty.
+Then you start the game. You are randomly assigned a card from the box you choose. If you give the right answer, then the card goes to the next box. Thus you should send all cards to the 5th box. If the answer is wrong, the card goes back to the beginning.
+
+## Technical points
+>Creating a manger to create Custom User
+>>*This code performs the function of redefining fields for User, for Name email and password, in my case.*
+```
+* from django.contrib.auth.base_user import BaseUserManager 
+* from django.contrib.auth.hashers import make_password
+
+    class CardUserManager(BaseUserManager):
+
+    def _create_user(self, email, password, **extra_fields):
+
+        email = self.normalize_email(email)
+
+        user = self.model(email=email, **extra_fields)
+        user.password = make_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_user(self, email=None, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", False)
+        extra_fields.setdefault("is_superuser", False)
+        return self._create_user(email, password, **extra_fields)
+
+    def create_superuser(self, email=None, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=True.")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True.")
+
+        return self._create_user(email, password, **extra_fields)
+```
