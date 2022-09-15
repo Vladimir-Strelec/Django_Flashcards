@@ -14,7 +14,7 @@
 >APP INFO
 > >This app is designed for learning foreign languages in a playful way. Its logic is simple, you need to create a card in one of the 5 boxes. This card must have a question and an answer. You can create as many cards as you want, depending on the difficulty.
 Then you start the game. You are randomly assigned a card from the box you choose. If you give the right answer, then the card goes to the next box. Thus you should send all cards to the 5th box. If the answer is wrong, the card goes back to the beginning.
-
+___
 ## Technical points
 >Creating a manger to create Custom User
 >>*This code performs the function of redefining fields for User, for Name email and password, in my case.*
@@ -48,4 +48,15 @@ Then you start the game. You are randomly assigned a card from the box you choos
             raise ValueError("Superuser must have is_superuser=True.")
 
         return self._create_user(email, password, **extra_fields)
+```
+___
+>*Logic that allows you to shuffle the cards 
+```
+    def move(self, solved):
+        new_box = self.box + 1 if solved and self.box + 1 <= 5 else BOXES[0]
+
+        self.box = new_box
+        self.save()
+        
+        return self
 ```

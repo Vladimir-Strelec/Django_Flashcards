@@ -23,7 +23,6 @@ class Card(models.Model):
     def move(self, solved):
         new_box = self.box + 1 if solved and self.box + 1 <= 5 else BOXES[0]
 
-
         self.box = new_box
         self.save()
 
