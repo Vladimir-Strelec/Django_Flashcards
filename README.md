@@ -18,11 +18,11 @@ ___
 ## Technical points
 >Creating a manger to create Custom User
 >>*This code performs the function of redefining fields for User, for Name email and password, in my case.*
-```
-* from django.contrib.auth.base_user import BaseUserManager 
-* from django.contrib.auth.hashers import make_password
+```python
+from django.contrib.auth.base_user import BaseUserManager 
+from django.contrib.auth.hashers import make_password
 
-    class CardUserManager(BaseUserManager):
+class CardUserManager(BaseUserManager):
 
     def _create_user(self, email, password, **extra_fields):
 
@@ -50,13 +50,17 @@ ___
         return self._create_user(email, password, **extra_fields)
 ```
 ___
->*Logic that allows you to shuffle the cards 
-```
-    def move(self, solved):
-        new_box = self.box + 1 if solved and self.box + 1 <= 5 else BOXES[0]
+>Logic that allows you to shuffle the cards
+>>*If the variable solved is True, then 1 is added to the box number. If the result is not in the range or ansver False , then it is reset to the first box.*
+```python
+def move(self, solved):
+    new_box = self.box + 1 if solved and self.box + 1 <= 5 else BOXES[0]
 
-        self.box = new_box
-        self.save()
-        
-        return self
+    self.box = new_box
+    self.save()
+    
+    return self
 ```
+___
+## Tests
+![Coverage](https://cloud.mail.ru/public/gESd/NECQFLYkn)
