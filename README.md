@@ -64,4 +64,4 @@ def move(self, solved):
 ___
 ## Tests
 
-![](C:/Users/Vova/Desktop/win.png)
+![](https://drive.google.com/file/d/1ubOPkClab55i-_M4TmMOpsYfX8bwiZcj/view?usp=sharing)
