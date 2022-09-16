@@ -63,4 +63,4 @@ def move(self, solved):
 ```
 ___
 
-![](C:/Users/Vova/Desktop/win.jpg?raw=true&sanitize=true)
+![](https://github.com/Vladimir-Strelec/Django_Flashcards/blob/main/img.png?raw=true&sanitize=true)
