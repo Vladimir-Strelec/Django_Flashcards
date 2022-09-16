@@ -1,8 +1,8 @@
 ![Header](https://thumbs.gfycat.com/AromaticMemorableAnemonecrab-max-1mb.gif)
-
+___
 # Django_Flashcards:nerd_face:
 [![Flutter](https://img.shields.io/badge/-Link_to_this_app_on_heroku-000000?style=for-the-badge&)](https://webgame198890201.herokuapp.com/)
-
+___
 ## *Languages and tools*
 
 ![](https://img.shields.io/static/v1?label=&message=PYTHON&color=black&style=for-the-badge&logo=python&logoColor=yellow)
@@ -10,7 +10,7 @@
 ![](https://img.shields.io/static/v1?label=&message=PosgreSQL&color=black&style=for-the-badge&logo=Postgresql&logoColor=3399ff)
 ![](https://img.shields.io/static/v1?label=&message=SQLITE&color=black&style=for-the-badge&logo=SQLITE&logoColor=red)
 ![](https://img.shields.io/static/v1?label=&message=Docker&color=black&style=for-the-badge&logo=Docker)
-
+___
 >APP INFO
 > >This app is designed for learning foreign languages in a playful way. Its logic is simple, you need to create a card in one of the 5 boxes. This card must have a question and an answer. You can create as many cards as you want, depending on the difficulty.
 Then you start the game. You are randomly assigned a card from the box you choose. If you give the right answer, then the card goes to the next box. Thus you should send all cards to the 5th box. If the answer is wrong, the card goes back to the beginning.
@@ -63,4 +63,4 @@ def move(self, solved):
 ```
 ___
 ## Tests
-![](C:/Users/Vova/Desktop/win.png)
+![Result](C:/Users/Vova/Desktop/win.png)
