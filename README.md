@@ -63,4 +63,5 @@ def move(self, solved):
 ```
 ___
 ## Tests
-![Result](C:/Users/Vova/Desktop/win.png)
+
+![](C:/Users/Vova/Desktop/win.png)
