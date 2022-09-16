@@ -62,6 +62,5 @@ def move(self, solved):
     return self
 ```
 ___
-## Tests
 
-![](https://drive.google.com/file/d/1ubOPkClab55i-_M4TmMOpsYfX8bwiZcj/view?usp=sharing)
+![](C:\Users\Vova\Desktop\win.jpg)
