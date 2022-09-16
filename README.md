@@ -1,4 +1,4 @@
-![Header](https://thumbs.gfycat.com/AromaticMemorableAnemonecrab-max-1mb.gif)
+![Header](https://thumbs.gfycat.com/AdmirableEvergreenDoe-size_restricted.gif)
 ___
 # Django_Flashcards:nerd_face:
 [![Flutter](https://img.shields.io/badge/-Link_to_this_app_on_heroku-000000?style=for-the-badge&)](https://webgame198890201.herokuapp.com/)
@@ -62,5 +62,6 @@ def move(self, solved):
     return self
 ```
 ___
+## You can see the test result in the screenshot below.
 
 ![](https://github.com/Vladimir-Strelec/Django_Flashcards/blob/main/img.png?raw=true&sanitize=true)
