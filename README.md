@@ -63,4 +63,4 @@ def move(self, solved):
 ```
 ___
 
-![Alt text](C:/Users/Vova/Desktop/win.jpg?raw=true&sanitize=true)
+![](C:/Users/Vova/Desktop/win.jpg?raw=true&sanitize=true)
