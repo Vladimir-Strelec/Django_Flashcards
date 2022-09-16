@@ -63,4 +63,4 @@ def move(self, solved):
 ```
 ___
 ## Tests
-![Coverage](https://cloud.mail.ru/public/gESd/NECQFLYkn)
+![](C:/Users/Vova/Desktop/win.png)
